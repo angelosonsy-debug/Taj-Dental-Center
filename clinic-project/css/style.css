@@ -1,0 +1,162 @@
+/* Custom Properties */
+:root {
+    --primary-color: #0077B6;
+    --secondary-color: #00B4D8;
+    --dark-bg: #03045E;
+    --light-bg: #f8f9fa;
+    --text-color: #333333;
+    --light-blue: #e6f1fb;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Cairo', sans-serif;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Utilities */
+.text-primary { color: var(--primary-color) !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+.bg-light-blue { background-color: var(--light-blue) !important; }
+.btn-primary { 
+    background-color: var(--primary-color); 
+    border-color: var(--primary-color); 
+}
+.btn-primary:hover { 
+    background-color: var(--dark-bg); 
+    border-color: var(--dark-bg); 
+}
+.transition-all { transition: all 0.3s ease-in-out; }
+
+/* Navbar */
+.navbar {
+    padding: 10px 0;
+}
+.navbar.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: calc(100vh - 60px);
+    background: linear-gradient(rgba(3, 4, 94, 0.85), rgba(3, 4, 94, 0.75)), 
+                url('/imgs/home.jpg') center/cover no-repeat;
+    padding-top: 100px; /* Offset for fixed navbar */
+}
+
+/* About Image */
+.doctor-img {
+    object-fit: cover;
+    height: 450px;
+    width: 100%;
+}
+
+/* Services Cards */
+.service-icon {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+.service-card:hover {
+    background-color: var(--primary-color) !important;
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+.service-card:hover h4, 
+.service-card:hover p {
+    color: white !important;
+}
+.service-card:hover .service-icon {
+    color: white;
+}
+
+/* Forms */
+.form-control:focus, .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 180, 216, 0.25);
+}
+
+/* Icons */
+.icon-box {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== Responsive Fixes ===== */
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.hero-section {
+    background-position: center center;
+    background-size: cover;
+    padding-top: 110px;
+    padding-bottom: 50px;
+}
+
+.hero-section h1 {
+    line-height: 1.2;
+}
+
+.service-card,
+.doctor-card,
+.stat-card,
+.section-card {
+    border-radius: 18px;
+}
+
+/* Bigger click areas on mobile */
+.btn {
+    min-height: 44px;
+}
+
+/* Map */
+.ratio iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 991px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 130px;
+        padding-bottom: 70px;
+        text-align: center;
+    }
+
+    .navbar h4{
+        font-size:medium;
+    }
+    .navbar a img{
+        height: 40px;
+    }
+    .hero-section {
+    min-height: 100vh;
+    background: linear-gradient(rgba(3, 4, 94, 0.85), rgba(3, 4, 94, 0.75)), 
+                url('/imgs/home-m.jpg') center/cover no-repeat;
+    padding-top: 100px; /* Offset for fixed navbar */
+}
+
+    @media(max-width:768px){
+    .doctor-img{
+        height:300px;
+    }
+}
+}
